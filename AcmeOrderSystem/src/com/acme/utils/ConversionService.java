@@ -1,5 +1,7 @@
 package com.acme.utils;
 
+import java.math.BigDecimal;
+
 public class ConversionService {
 
 	/**
@@ -7,14 +9,17 @@ public class ConversionService {
 	 */
 
 	// Conversion rate for 1 kilogram to pounds
-	public static double kilogramToPounds = 2.2046;
-
+	//public static double kilogramToPounds = 2.2046;
+	public static BigDecimal kilogramToPounds = new BigDecimal(2.2046);
+	
 	// Conversion rate for 1 kilogram to grams
-	public static int kilogramToGrams = 1000;
-
+	//public static int kilogramToGrams = 1000;
+	public static BigDecimal kilogramToGrams = new BigDecimal(1000);
+	
 	// Conversion rate for 1 kilogram to weight ounces
-	public static double kilogramToOunces = 35.274;
-
+	//public static double kilogramToOunces = 35.274;
+	public static BigDecimal kilogramToOunces = new BigDecimal(35.274);
+	
 	/**
 	 * Volume conversion rates
 	 */
@@ -31,16 +36,16 @@ public class ConversionService {
 	// Conversion rate for 1 liter to milliliters
 	public static short litertoMilliliters = 1_000;
 
-	public static double pounds(double kilograms) {
-		return kilograms * kilogramToPounds;
+	public static BigDecimal pounds(BigDecimal kilograms) {
+		return kilograms.multiply(kilogramToPounds);
 	}
 
-	public static int grams(int kilograms) {
-		return kilograms * kilogramToGrams;
+	public static BigDecimal grams(BigDecimal kilograms) {
+		return kilograms.multiply(kilogramToGrams);
 	}
 
-	public static double ounces(double kilograms) {
-		return kilograms * kilogramToOunces;
+	public static BigDecimal ounces(BigDecimal kilograms) {
+		return kilograms.multiply(kilogramToOunces);
 	}
 
 	public static float fluidOunces(float liters) {
