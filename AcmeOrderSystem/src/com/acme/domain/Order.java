@@ -39,8 +39,39 @@ public class Order {
 	}
 	
 	public double computeTax() {
-		System.out.println("The tax for this order is: " + orderAmount * Order.taxRate);
+//		System.out.println("The tax for this order is: " + orderAmount * Order.taxRate);
 		return orderAmount * Order.taxRate;
+	}
+	
+	public char jobSize() {
+		if(quantity <= 25) {
+			return 'S';
+		} else if(quantity >= 26 && quantity <= 75) {
+			return 'M';
+		} else if(quantity >= 76 && quantity <= 150 ) {
+			return 'L';
+		}
+		return 'X';
+	}
+	
+	public double computeTotal() {
+		
+		double total = orderAmount;
+		if(jobSize() == 'M') {
+			total = total - (orderAmount * 0.01);
+//			discPercent = 0.01;
+		} else if(jobSize() == 'L') {
+			total = total - (orderAmount * 0.02);
+//			discPercent = 0.02;
+		} else if(jobSize() == 'X') {
+			total = total - (orderAmount * 0.02);
+//			discPercent = 0.03;
+		}
+		if(orderAmount <= 1500) {
+			total = total + computeTax();
+		}
+		
+		return total;
 	}
 	
 }
