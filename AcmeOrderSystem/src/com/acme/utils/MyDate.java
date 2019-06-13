@@ -32,4 +32,16 @@ public class MyDate {
 		this.month = month;
 		this.year = year;
 	}
+	
+	public static void leapYears() {
+		System.out.println("Leap year method...");
+		int currentYr = 1752;
+		while(currentYr <= 2020) {			
+			if( currentYr % 100 != 0 || currentYr % 400 == 0) {
+				System.out.println("The year " + currentYr + " is a leap year!");
+			}
+			currentYr+=4;
+		}
+		
+	}
 }
