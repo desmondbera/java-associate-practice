@@ -70,4 +70,12 @@ public class Good {
 	public double weight() {
 		return volume() * weightPerUofM;
 	}
+	
+	public final boolean canShipViaPostOffice() {
+		if(!isFlammable() && getWeightPerUofM() < 200) {
+			return true;
+		}
+		return false;
+	}
+	
 }

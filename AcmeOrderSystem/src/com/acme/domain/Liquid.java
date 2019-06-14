@@ -25,4 +25,5 @@ public class Liquid extends Good {
 	public String toString() {
 		return super.toString() + " (liquid) " + volume() + " " + getUnitOfMeasure();
  	}
+	
 }
