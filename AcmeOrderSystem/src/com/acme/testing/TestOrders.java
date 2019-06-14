@@ -1,4 +1,5 @@
 package com.acme.testing;
+import com.acme.domain.Good;
 import com.acme.domain.Good.UnitOfMeasureType;
 import com.acme.domain.Order;
 import com.acme.domain.Solid;
@@ -45,6 +46,9 @@ public class TestOrders {
 		//Fix this by using casting to cast the product reference back to its real Solid
 		//type and then calling the getLength( ) method.
 		System.out.println("The length of the anvil is: " + ( (Solid) anvil.getProduct()).getLength());
+		
+		System.out.println("==============================");
+				
 		
 	}
 
