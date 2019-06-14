@@ -5,7 +5,6 @@ import com.acme.domain.Solid;
 import com.acme.utils.MyDate;
 
 public class TestOrders {
-
 	/**
 	 * @param args
 	 */
@@ -40,6 +39,13 @@ public class TestOrders {
 		System.out.println("The total bill for " + balloons + " is " + balloons.computeTotal());
 		
 		balloons.setQuantity(-200);
+		
+		System.out.println("==============================");
+		System.out.println("The volume of the anvil is: " + anvil.getProduct().volume());
+		//Fix this by using casting to cast the product reference back to its real Solid
+		//type and then calling the getLength( ) method.
+		System.out.println("The length of the anvil is: " + ( (Solid) anvil.getProduct()).getLength());
+		
 	}
 
 }
