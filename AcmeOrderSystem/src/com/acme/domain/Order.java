@@ -2,12 +2,58 @@ package com.acme.domain;
 import com.acme.utils.MyDate;
 
 public class Order {
-	MyDate orderDate;
-	double orderAmount = 0.00;
-	String customer;
-	String product;
-	int quantity;
+	private MyDate orderDate;
+	private double orderAmount = 0.00;
+	private String customer;
+	private String product;
+	private int quantity;
 	
+	
+	//Getters and Setters
+	public MyDate getOrderDate() {
+		return orderDate;
+	}
+
+	public void setOrderDate(MyDate orderDate) {
+		this.orderDate = orderDate;
+	}
+
+	public double getOrderAmount() {
+		return orderAmount;
+	}
+
+	public void setOrderAmount(double orderAmount) {
+		if(valid(orderAmount)) {
+			this.orderAmount = orderAmount;
+		}
+	}
+
+	public String getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(String customer) {
+		this.customer = customer;
+	}
+
+	public String getProduct() {
+		return product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		if(valid(quantity)) {
+			this.quantity = quantity;
+		}
+	}
+
 	public static double taxRate;
 	
 	{
@@ -72,6 +118,14 @@ public class Order {
 		}
 		
 		return total;
+	}
+	
+	private boolean valid(double num) {
+		if((int)num < 0 ) {
+			System.out.println("Attempting to create a non-valid amount.");
+			return false;
+		}
+		return true;
 	}
 	
 }
