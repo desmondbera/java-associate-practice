@@ -7,6 +7,7 @@ public class Order {
 	private String customer;
 	private Product product;
 	private int quantity;
+	private static Rushable rushable;
 	
 	
 	//Getters and Setters
@@ -27,7 +28,6 @@ public class Order {
 			this.orderAmount = orderAmount;
 		}
 	}
-
 	public String getCustomer() {
 		return customer;
 	}
@@ -54,12 +54,21 @@ public class Order {
 		}
 	}
 
+	public static Rushable getRushable() {
+		return rushable;
+	}
+	
+	public static void setRushable(Rushable rushable) {
+		Order.rushable = rushable;
+	}
+	
 	public static double taxRate;
 	
 	{
 		taxRate = 0.05;
 	}
 	
+	// Methods
 	public Order(MyDate d, double amt, String c, Product p, int q){
 		orderDate=d;
 		orderAmount=amt;
