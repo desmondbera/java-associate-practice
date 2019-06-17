@@ -77,9 +77,13 @@ public class Order {
 		quantity=q;
 	}
 	
-//	public Order(MyDate d, double amt, String c) {
-//		this(d, amt, c, "anvil", 1);
-//	}
+	public boolean isPriorityOrder() {
+		boolean priorityOrder = false;
+		if(rushable != null) {
+			priorityOrder = rushable.isRushable(orderDate, orderAmount);
+		}
+		return priorityOrder;
+	}
 	
 	public String toString(){
 		return quantity + " ea. " + product + " for " + customer; 
