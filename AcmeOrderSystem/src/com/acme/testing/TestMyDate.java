@@ -26,7 +26,7 @@ public class TestMyDate{
 		String str4 = date4.toString();
 		System.out.println("Str4 is : " + str4);
 		
-		MyDate.leapYears();
+//		MyDate.leapYears();
 		
 		MyDate newYear = new MyDate(1, 1, 2019);
 		MyDate fiscalStart = new MyDate(1, 1, 2009);
@@ -37,5 +37,11 @@ public class TestMyDate{
 			System.out.println("These two dates are not equal!");
 		}
 		
+		
+		
+//		MyDate date5 = new MyDate(1,1, 2019);
+//		String str5 = date5.toString();
+//		System.out.println("String 5 is: " + str5);
+		MyDate.listHolidays();
 	}
 }

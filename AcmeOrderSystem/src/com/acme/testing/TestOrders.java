@@ -70,10 +70,14 @@ public class TestOrders {
 		System.out.println("The total bill for : " + birdEradication + " is " + birdEradication.computeTotal());
 		
 		System.out.println("==============================");
-		MyDate hammerDate = new MyDate(6, 17, 2019);
+		MyDate hammerDate = new MyDate(1, 1, 2019);
 		Solid hammerType = new Solid("Acme Hammer", 281, 0.3, UnitOfMeasureType.CUBIC_METER, false, 100, 0.25, 0.3);
 		Order hammer = new Order(hammerDate, 10.00, "Wile E Coyote", hammerType, 10);
 		System.out.println("Hammer isPriorityOrder: " + hammer.isPriorityOrder());
+		
+		System.out.println("-=====-");
+	
+//		MyDate date5 = new MyDate(1,1, 2019);
 	}
 
 }

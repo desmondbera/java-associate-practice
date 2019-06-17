@@ -4,12 +4,18 @@ public class MyDate {
 	private byte day;
 	private byte month;
 	private short year;
+	private static MyDate[] holidays;
 	
 	//Initialization block 
-	{
-		day = 1;
-		year = 2000;
-		month = 1;
+	static {
+		
+		holidays = new MyDate[6];
+		holidays[0] = new MyDate(1, 1, 2019);
+		holidays[1] = new MyDate(5, 30, 2019);
+		holidays[2] = new MyDate(7, 4, 2019);
+		holidays[3] = new MyDate(9, 5, 2019);
+		holidays[4] = new MyDate(11, 24, 2019);
+		holidays[5] = new MyDate(12, 25, 2019);
 	}
 	
 	//Default Constructor
@@ -22,6 +28,10 @@ public class MyDate {
 	}
 	
 	//Getters & Setters
+	public static MyDate[] getHolidays() {
+		return holidays;
+	}
+	
 	public int getDay() {
 		return day;
 	}
@@ -44,6 +54,15 @@ public class MyDate {
 	public void setMonth(int month) {
 		if(valid(day, month, year)) {
 			this.month = (byte)month;
+		}
+	}
+	
+	//Methods
+	
+	public static void listHolidays() {
+		System.out.println("The holiday are: ");
+		for(int x = 0; x < holidays.length; x++) {
+			System.out.println(holidays[x]);
 		}
 	}
 	
